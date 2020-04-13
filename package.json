@@ -1,12 +1,12 @@
 {
-  "name": "Crud Rest Api",
+  "name": "CrudRestApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hy",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "Me",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
