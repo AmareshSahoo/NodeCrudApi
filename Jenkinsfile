@@ -1,23 +1,15 @@
 pipeline {
-  agent any
-  tools {nodejs "node" }
-  stages {
-    stage('Cloning Git') {
-      steps {
-        echo 'Cloning Git...'
-        git 'https://github.com/AmareshSahoo/NodeCrudApi.git'
-      }
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
+        }
     }
-    stage('Build') {
-       steps {
-         echo 'Build In Progress...'
-         sh 'npm install'
-       }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install' 
+            }
+        }
     }
-    stage('Test') {
-      steps {
-        echo 'Testing Complete...'
-      }
-    }
-  }
 }
