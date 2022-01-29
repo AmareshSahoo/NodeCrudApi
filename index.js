@@ -11,7 +11,12 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 
 app.listen(process.env.PORT || 3000, () => console.log('Server started at port : 3000'));
 
-app.use('/test', (req, res) => {
-    res.send('Hello World!')
+
+app.get('/', (req, res) => {
+    res.send('CICD App V1!')
+})
+
+app.use('/status', (req, res) => {
+    res.status(200).send('Ok')
 })
 app.use('/employees', employeeController);
